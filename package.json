@@ -1,0 +1,25 @@
+{
+  "name": "sumchat",
+  "version": "1.0.0",
+  "description": "A discord bot that can summarize the last few chats or x amount of time.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theballmarcus/sumChat.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theballmarcus/sumChat/issues"
+  },
+  "homepage": "https://github.com/theballmarcus/sumChat#readme",
+  "dependencies": {
+    "discord.js": "^14.8.0",
+    "openai": "^3.2.1",
+    "readline": "^1.3.0"
+  }
+}
