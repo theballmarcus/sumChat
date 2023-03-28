@@ -1,7 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const chat_1 = require("./chat");
-var c = new chat_1.ChatGPT("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");
+const fs_1 = require("fs");
+let rawdata = (0, fs_1.readFileSync)('config.json');
+let chatApiKey = JSON.parse(rawdata)['chatApiKey'];
+var c = new chat_1.ChatGPT(chatApiKey);
 var t = `
 Per | København — 01/02/2023 6:09 PM
 Ja, det er meget normalt - de bliver sygt varme. Det er nok ikke då sundt i længden, men det er sådan de er designet

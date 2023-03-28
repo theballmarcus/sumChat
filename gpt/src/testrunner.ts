@@ -1,6 +1,10 @@
 import { ChatGPT } from "./chat";
+import { readFileSync} from 'fs';
 
-var c = new ChatGPT("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")
+let rawdata : any = readFileSync('config.json');
+let chatApiKey : string = JSON.parse(rawdata)['chatApiKey'];
+
+var c = new ChatGPT(chatApiKey)
 
 var t : string = `
 Per | København — 01/02/2023 6:09 PM
