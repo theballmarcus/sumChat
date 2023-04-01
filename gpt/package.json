@@ -12,6 +12,7 @@
     "typescript": "^5.0.2"
   },
   "dependencies": {
-    "commonjs": "^0.0.1"
+    "commonjs": "^0.0.1",
+    "ts-node": "^10.9.1"
   }
 }

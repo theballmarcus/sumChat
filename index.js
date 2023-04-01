@@ -23,8 +23,8 @@ for (const folder of commandFolders) {
 	}
 }
 
-client.once(Events.ClientReady, () => {
-	console.log('Ready!');
+client.once(Events.ClientReady, (c) => {
+	console.log(`Bot logged in as ${c.user.tag}!`);
 });
 
 client.on(Events.InteractionCreate, async interaction => {

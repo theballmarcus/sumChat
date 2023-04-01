@@ -1,7 +1,7 @@
 import { ChatGPT } from "./chat";
 import { readFileSync} from 'fs';
 
-let rawdata : any = readFileSync('config.json');
+let rawdata : any = readFileSync('../config.json');
 let chatApiKey : string = JSON.parse(rawdata)['chatApiKey'];
 
 var c = new ChatGPT(chatApiKey)
@@ -70,4 +70,7 @@ Måske I og jeres familie vil stemme med? 🙂
 Man kan stemme 1 gang pr mobil nr 
 `
 
-c.summarize(t, (v) => console.log(v))
+c.askGPT(t).then(v => {
+    console.log(v.data.choices[0].message)
+})
+console.log("Test")

@@ -16,15 +16,12 @@ class ChatGPT {
         this.configuration = new openai_1.Configuration({ apiKey: chatApiKey });
         this.openai = new openai_1.OpenAIApi(this.configuration);
     }
-    summarize(discordMessages, callback) {
+    askGPT(message) {
         return __awaiter(this, void 0, void 0, function* () {
-            let request = "I've been away from a chat some time. Summarize theese messages in short terms: \n" + discordMessages;
-            const response = yield this.openai.createChatCompletion({
-                messages: [{ role: "user", content: discordMessages }],
+            return this.openai.createChatCompletion({
+                messages: [{ role: "user", content: message }],
                 model: "gpt-3.5-turbo",
             });
-            const botMessage = response.data.choices[0].message;
-            callback(botMessage.content);
         });
     }
 }

@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const chat_1 = require("./chat");
 const fs_1 = require("fs");
-let rawdata = (0, fs_1.readFileSync)('config.json');
+let rawdata = (0, fs_1.readFileSync)('../config.json');
 let chatApiKey = JSON.parse(rawdata)['chatApiKey'];
 var c = new chat_1.ChatGPT(chatApiKey);
 var t = `
@@ -68,4 +68,7 @@ https://aaretsforening.dk/nomineringer/coding-pirates/
 Måske I og jeres familie vil stemme med? 🙂
 Man kan stemme 1 gang pr mobil nr 
 `;
-c.summarize(t, (v) => console.log(v));
+c.askGPT(t).then(v => {
+    console.log(v.data.choices[0].message);
+});
+console.log("Test");
